@@ -147,7 +147,7 @@ while True:
             binary_program_number="{0:b}".format(program_number)
             binary_program_number=binary_program_number.zfill(7)
             binary_to_leds(binary_program_number)
-            time.sleep(1)
+            time.sleep(.1)
         time.sleep(.1)
         timer =(timer-1)
 
@@ -156,7 +156,7 @@ while True:
 
         if (timer==0):
             GPIO.output(ledpins[0],1)
-            time.sleep(.5)
+            time.sleep(.1)
             GPIO.output(ledpins[0],0)
             timer = 30
 
