@@ -74,9 +74,12 @@ def do_program(prog):
         do_weather_forecast("forecasts",0,"high") # wind speed
     if (prog=="0000101"):
         do_magic8() # the magic 8 ball
+    if (prog=="0000110"):
+        send_sms() # send a text msg
 
-# print yahoo_result['forecasts'][0]['high']
-
+def send_sms():
+    os.system("/home/pi/sendtxt.sh")
+    binary_to_leds("1111111")
 
 def do_weather(param1,param2):
     yahoo_result = pywapi.get_weather_from_yahoo('06484','imperial')
