@@ -75,10 +75,12 @@ def do_program(prog):
     if (prog=="0000101"):
         do_magic8() # the magic 8 ball
     if (prog=="0000110"):
-        send_sms() # send a text msg
+        send_sms(1) # send a text msg to person 1
+    if (prog=="0000111"):
+        send_sms(2) # send a text msg to person 2
 
-def send_sms():
-    os.system("/home/pi/sendtxt.sh")
+def send_sms(person):
+    os.system("/home/pi/sendtxt.sh " + str(person))
     binary_to_leds("1111111")
 
 def do_weather(param1,param2):
