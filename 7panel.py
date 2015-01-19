@@ -78,6 +78,8 @@ def do_program(prog):
         send_sms(1) # send a text msg to person 1
     if (prog=="0000111"):
         send_sms(2) # send a text msg to person 2
+    if (prog=="0001000"):
+        do_weather_forecast("forecasts",0,"low")
 
 def send_sms(person):
     os.system("/home/pi/sendtxt.sh " + str(person))
